@@ -342,6 +342,12 @@ while(True):
                 count +=1
             if int(classes[0][i] == 67):
                 print("Mobile Phone Detected")
+            if int(classes[0][i] == 63):
+                print("Laptop Detected")
+            if int(classes[0][i] == 62):
+                print("tvmonitor Detected")
+            if int(classes[0][i] == 73):
+                print("Book Detected")
         if count == 0:
             print('No person detected')
         elif count > 1: 
