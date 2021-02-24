@@ -318,46 +318,46 @@ def YoloV3(size=None, channels=3, anchors=yolo_anchors,
     return Model(inputs, outputs, name='yolov3')
 
 # yolov3 = wget.download('https://pjreddie.com/media/files/yolov3.weights', out='yolov3.weights')
-yolo = YoloV3()
-load_darknet_weights(yolo, 'yolov3.weights') 
-# img = tf.image.decode_image(open("dog.jpg", 'rb').read(), channels=3)
-# img = tf.expand_dims(img, 0)
-# img = tf.image.resize(img, (416, 416))
-# img = img / 255
-# img = cv2.imread('dog.jpg')
-cap = cv2.VideoCapture(0)
-while(True):
-    ret, image = cap.read()
-    if ret==True:
-        img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        img = cv2.resize(img, (320, 320))
-        img = img.astype(np.float32)
-        img = np.expand_dims(img, 0)
-        img = img / 255
-        class_names = [c.strip() for c in open("classes.txt").readlines()]
-        boxes, scores, classes, nums = yolo(img)
-        count=0
-        for i in range(nums[0]):
-            if int(classes[0][i] == 0):
-                count +=1
-            if int(classes[0][i] == 67):
-                print("Mobile Phone Detected")
-            if int(classes[0][i] == 63):
-                print("Laptop Detected")
-            if int(classes[0][i] == 62):
-                print("tvmonitor Detected")
-            if int(classes[0][i] == 73):
-                print("Book Detected")
-        if count == 0:
-            print('No person detected')
-        elif count > 1: 
-            print('More than one person detected')
-        image = draw_outputs(image, (boxes, scores, classes, nums), class_names)
-        cv2.imshow('Prediction', image)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
-    else:
-        break
+# yolo = YoloV3()
+# load_darknet_weights(yolo, 'yolov3.weights') 
+# # img = tf.image.decode_image(open("dog.jpg", 'rb').read(), channels=3)
+# # img = tf.expand_dims(img, 0)
+# # img = tf.image.resize(img, (416, 416))
+# # img = img / 255
+# # img = cv2.imread('dog.jpg')
+# cap = cv2.VideoCapture(0)
+# while(True):
+#     ret, image = cap.read()
+#     if ret==True:
+#         img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+#         img = cv2.resize(img, (320, 320))
+#         img = img.astype(np.float32)
+#         img = np.expand_dims(img, 0)
+#         img = img / 255
+#         class_names = [c.strip() for c in open("classes.txt").readlines()]
+#         boxes, scores, classes, nums = yolo(img)
+#         count=0
+#         for i in range(nums[0]):
+#             if int(classes[0][i] == 0):
+#                 count +=1
+#             if int(classes[0][i] == 67):
+#                 print("Mobile Phone Detected")
+#             if int(classes[0][i] == 63):
+#                 print("Laptop Detected")
+#             if int(classes[0][i] == 62):
+#                 print("tvmonitor Detected")
+#             if int(classes[0][i] == 73):
+#                 print("Book Detected")
+#         if count == 0:
+#             print('No person detected')
+#         elif count > 1: 
+#             print('More than one person detected')
+#         image = draw_outputs(image, (boxes, scores, classes, nums), class_names)
+#         cv2.imshow('Prediction', image)
+#         if cv2.waitKey(1) & 0xFF == ord('q'):
+#             break
+#     else:
+#         break
     
-cap.release()
-cv2.destroyAllWindows()
+# cap.release()
+# cv2.destroyAllWindows()
