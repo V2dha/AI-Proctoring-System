@@ -5,6 +5,7 @@
 ![5 functions](https://user-images.githubusercontent.com/50369708/124362462-a34b9280-dc52-11eb-834e-09e1ffb9094c.png)
 
 ### Reference
-[Article](https://medium.com/analytics-vidhya/count-people-in-webcam-using-yolov3-tensorflow-f407679967d5)
+https://medium.com/analytics-vidhya/count-people-in-webcam-using-yolov3-tensorflow-f407679967d5
+https://github.com/zzh8829/yolov3-tf2
 
 
